@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Satuan Kerja Pengembangan Air Minum Dan Sanitasi Jawa Tengah</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" type="text/css" href="css/disable-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-menu-utama.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-multiple-menu.css">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="background-color:#EEEEEE;">
+    <!-- div container -->
+    <div class="container">
+        <!-- div header -->
+        <div class="row">
+            <div class="col-xs-12" id="banner">
+               <!--  <div class="row">
+                    <img src="images/logo-pams-desain-2.jpg">
+                </div> -->
+            </div> 
+        </div>
+        <!-- end div header -->
+
+        <!-- div menu -->
+        <div id="menu"></div>
+        <!-- end div menu -->
+            
+        <div class="row">
+            <div class="col-xs-12 margin-top-main-content">
+                <img src="images/berita-desain-3.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div>
+            </div>
+
+            <div class="col-md-12" id="berita">
+                    
+            </div>
+
+            <div class="col-md-12">
+                <ul class="pagination pagination-lg pager" id="myPager"></ul>
+            </div>
+        </div>
+
+        <!-- div content dan menu footer -->
+        <div id="menu-footer"></div>
+        <!-- end div content dan menu footer -->
+    </div>
+    <!-- end div container -->
+    <script src="js/config.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        //banner
+        $.ajax({
+            url     : root+'index.php/banner/get_banner',
+            type    : 'GET',
+         
+            async   : false,
+            cache   : false,
+            processData : false,
+            contentType : false,
+            success:function (data){
+                //console.log(data);
+                $("#banner").empty();
+                $("#banner").html('<div class="row"><img src="'+root+'upload/foto/'+data[0].banner+'.JPG"></div>');
+            }
+        })
+        //banner
+
+         $.ajax({
+            url     : root+'index.php/berita/get_berita_jml/',
+            type    : 'GET',
+         
+            async   : false,
+            cache   : false,
+            processData : false,
+            contentType : false,
+            success:function (data){
+                //console.log(data.data[0]);
+                $("berita").empty();
+                    $.each(data.data, function(i, item){
+                        var berita = item.isi.substring(0, 700);
+                        var gambar=item.gambar;
+                        if(item.gambar.slice(-3) != 'jpg' && item.gambar.slice(-3) !='JPG'){
+                            gambar = item.gambar+".JPG";
+                        }
+                        if(i==0){
+                            $("#berita").html('<div class="col-xs-12 margin-top-main-content"><div class="col-xs-3"><center><div class="content-image-berita"><img src="'+root+'/upload/foto/'+gambar+'" class="img-rounded" style="width:250px;"></div></center></div><div class="col-xs-9"> <div class="col-xs-12 "> <div class="row"><p class="font-title-berita">'+item.nama+'</p><p class="font-date-berita">'+item.tgl+'</p><p class="font-deskripsi-berita">'+berita+'</p><a href="detail-berita.html?id_berita='+item.id_berita+'"><button class="btn btn-default btn-sm" style="float:right"><i class="fa fa-search-plus"></i> Read More</button></a><div class="btn-group"><a class="btn btn-default" href="#"><i class="fa fa-twitter"></i></a><a class="btn btn-default" href="#"><i class="fa fa-facebook-square"></i></a></div></div></div></div></div>');
+                            }else{
+                                $("#berita").append('<div class="col-xs-12 margin-top-main-content"><div class="col-xs-3"><center><div class="content-image-berita"><img src="'+root+'/upload/foto/'+gambar+'" class="img-rounded" style="width:250px;"></div></center></div><div class="col-xs-9"> <div class="col-xs-12 "> <div class="row"><p class="font-title-berita">'+item.nama+'</p><p class="font-date-berita">'+item.tgl+'</p><p class="font-deskripsi-berita">'+berita+'</p><a href="detail-berita.html?id_berita='+item.id_berita+'"><button class="btn btn-default btn-sm" style="float:right"><i class="fa fa-search-plus"></i> Read More</button></a><div class="btn-group"><a class="btn btn-default" href="#"><i class="fa fa-twitter"></i></a><a class="btn btn-default" href="#"><i class="fa fa-facebook-square"></i></a></div></div></div></div></div>');
+                            }
+                        i++;
+                    })
+            }
+        })
+
+        $.fn.pageMe = function(opts){
+                var $this = this,
+                    defaults = {
+                        perPage: 7,
+                        showPrevNext: false,
+                        hidePageNumbers: false
+                    },
+                    settings = $.extend(defaults, opts);
+                
+                var listElement = $this;
+                var perPage = settings.perPage; 
+                var children = listElement.children();
+                var pager = $('.pager');
+                
+                if (typeof settings.childSelector!="undefined") {
+                    children = listElement.find(settings.childSelector);
+                }
+                
+                if (typeof settings.pagerSelector!="undefined") {
+                    pager = $(settings.pagerSelector);
+                }
+                
+                var numItems = children.size();
+                var numPages = Math.ceil(numItems/perPage);
+
+                pager.data("curr",0);
+                
+                if (settings.showPrevNext){
+                    $('<li><a href="#" class="prev_link" style="font-family:font-family:Raleway-Medium;font-size:14px;">Prev</a></li>').appendTo(pager);
+                }
+                
+                var curr = 0;
+                while(numPages > curr && (settings.hidePageNumbers==false)){
+                    $('<li><a href="#" class="page_link" style="font-family:font-family:Raleway-Medium;font-size:14px;">'+(curr+1)+'</a></li>').appendTo(pager);
+                    curr++;
+                }
+                
+                if (settings.showPrevNext){
+                    $('<li><a href="#" class="next_link" style="font-family:font-family:Raleway-Medium;font-size:14px;">Next</a></li>').appendTo(pager);
+                }
+                
+                pager.find('.page_link:first').addClass('active');
+                pager.find('.prev_link').hide();
+                if (numPages<=1) {
+                    pager.find('.next_link').hide();
+                }
+                pager.children().eq(1).addClass("active");
+                
+                children.hide();
+                children.slice(0, perPage).show();
+                
+                pager.find('li .page_link').click(function(){
+                    var clickedPage = $(this).html().valueOf()-1;
+                    goTo(clickedPage,perPage);
+                    return false;
+                });
+                pager.find('li .prev_link').click(function(){
+                    previous();
+                    return false;
+                });
+                pager.find('li .next_link').click(function(){
+                    next();
+                    return false;
+                });
+                
+                function previous(){
+                    var goToPage = parseInt(pager.data("curr")) - 1;
+                    goTo(goToPage);
+                }
+                 
+                function next(){
+                    goToPage = parseInt(pager.data("curr")) + 1;
+                    goTo(goToPage);
+                }
+                
+                function goTo(page){
+                    var startAt = page * perPage,
+                        endOn = startAt + perPage;
+                    
+                    children.css('display','none').slice(startAt, endOn).show();
+                    
+                    if (page>=1) {
+                        pager.find('.prev_link').show();
+                    }
+                    else {
+                        pager.find('.prev_link').hide();
+                    }
+                    
+                    if (page<(numPages-1)) {
+                        pager.find('.next_link').show();
+                    }
+                    else {
+                        pager.find('.next_link').hide();
+                    }
+                    
+                    pager.data("curr",page);
+                    pager.children().removeClass("active");
+                    pager.children().eq(page+1).addClass("active");
+                
+                }
+            };
+        $('#berita').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:10});
+        $("#menu").load("menu.html");
+        $("#menu-footer").load("menu-footer.html"); 
+    </script>
+</body>
+
+</html>

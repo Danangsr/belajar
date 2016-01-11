@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Satuan Kerja Pengembangan Air Minum Dan Sanitasi Jawa Tengah</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" type="text/css" href="css/disable-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-menu-utama.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-multiple-menu.css">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        p{
+            font-family:Raleway-Medium; 
+        }
+        li{
+           font-family:Raleway-Medium; 
+        }
+    </style>
+</head>
+
+<body style="background-color:#EEEEEE;">
+    <!-- div container -->
+    <div class="container">
+        <!-- div header -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <img src="images/logo-pams-desain-2.jpg">
+                </div>
+            </div> 
+        </div>
+        <!-- end div header -->
+
+        <!-- div menu -->
+        <div id="menu"></div>
+        <!-- end div menu -->
+        
+        <!-- div arah kebijakan -->
+        <div class="row margin-top-main-content">
+            <!-- <div class="col-xs-12">
+                <img src="images/arah-kebijakan-desain-3.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div>
+            </div> -->
+            
+            <!-- <div class="col-xs-6 col-xs-offset-3 margin-top-main-content" style="background-color:;border-bottom:2px solid #D2D7D3;">
+                <p class="font-title-tupoksi">
+                SPAM TERFASILITASI
+                </p>
+            </div> -->
+
+            <div class="col-xs-12 margin-top-main-content">
+                <center>
+                    <div id="gambar"></div>
+                    
+                </center>
+
+            </div>
+
+            <div class="col-xs-12 margin-top-main-content" id="isi-artikel">
+               
+
+             
+            </div>
+        </div>
+        <!-- end div arah kebijakan -->
+
+        <!-- div footer -->
+        <div id="menu-footer"></div>
+        <!-- end div footer -->
+    </div>
+    <!-- end div container -->
+    <script src="js/config.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+         //console.log(ambil_parameter.id_kegiatan);
+        $.ajax({
+            url     : root+'index.php/kegiatan_strategis/get_kegiatan_strategis/'+ambil_parameter.id_kegiatan,
+            type    : 'GET',
+         
+            async   : false,
+            cache   : false,
+            processData : false,
+            contentType : false,
+            success:function (data){
+            
+              $.each(data.data, function(i, item){
+             // var berita = item.isi.substring(0, 300);
+             
+              // $(".font-date-detail-berita").html(item.tgl);
+              // $(".font-title-detail-berita").html(item.nama);
+              $("#gambar").html('<img src="'+root+'/upload/foto/'+item.gambar+'.JPG">');
+              $("#isi-artikel").html(item.isi);
+             
+                 
+           
+        i++;
+           })
+            
+            }
+        })
+        $("#menu").load("menu.html");
+        $("#menu-footer").load("menu-footer.html");
+    </script>
+    <!-- end js menu utama -->
+    
+</body>
+
+</html>

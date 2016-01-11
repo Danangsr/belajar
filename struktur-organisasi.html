@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Satuan Kerja Pengembangan Air Minum Dan Sanitasi Jawa Tengah</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" type="text/css" href="css/disable-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-menu-utama.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-multiple-menu.css">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        p{
+            font-family:Raleway-Medium; 
+        }
+    </style>
+</head>
+
+<body style="background-color:#EEEEEE;">
+    <!-- div container -->
+    <div class="container">
+        <!-- div header -->
+        <div class="row">
+            <div class="col-xs-12" id="banner">
+                <!-- <div class="row">
+                    <img src="images/logo-pams-desain-2.jpg">
+                </div> -->
+            </div> 
+        </div>
+        <!-- end div header -->
+
+        <!-- div menu -->
+        <div id="menu"></div>
+        <!-- end div menu -->
+        
+        <!-- div struktur organisasi -->
+        <div class="row margin-top-main-content">
+            <div class="col-xs-12">
+                <img src="images/struktur-organisasi-desain-3.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div>
+            </div>
+            
+            <div class="col-md-12">
+                <center>
+                    <div id="gambar_struktur" class="margin-top-main-content" ></div>
+                </center>
+            </div>
+        </div>
+        <!-- end div struktur organisasi -->
+
+        <!-- div footer -->
+        <div id="menu-footer"></div>
+        <!-- end div footer -->
+    </div>
+    <!-- end div container -->
+   <script src="js/config.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        //banner
+        $.ajax({
+            url     : root+'index.php/banner/get_banner',
+            type    : 'GET',
+         
+            async   : false,
+            cache   : false,
+            processData : false,
+            contentType : false,
+            success:function (data){
+                //console.log(data);
+                $("#banner").empty();
+                $("#banner").html('<div class="row"><img src="'+root+'upload/foto/'+data[0].banner+'.JPG"></div>');      
+            }
+        })
+        //banner
+
+        //struktur organisasi
+        $.ajax({
+            url     : root+'index.php/struktur_organisasi/get_struktur_organisasi',
+            type    : 'GET',
+         
+            async   : false,
+            cache   : false,
+            processData : false,
+            contentType : false,
+            success:function (data){
+                //console.log(data);
+                $("#gambar_struktur").empty();
+                $("#gambar_struktur").html('<img style="width:100%" src="'+root+'upload/foto/'+data[0].gambar_struktur+'.JPG">');
+             
+              
+            }
+        })
+        //end struktur organisasi
+        $("#menu").load("menu.html");
+        $("#menu-footer").load("menu-footer.html");
+    </script>
+</body>
+
+</html>

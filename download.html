@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Satuan Kerja Pengembangan Air Minum Dan Sanitasi Jawa Tengah</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" type="text/css" href="css/disable-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-menu-utama.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-multiple-menu.css">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+     <link href="datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+           
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="background-color:#EEEEEE;">
+    <!-- div container -->
+    <div class="container">
+        <!-- div header -->
+        <div class="row">
+            <div class="col-xs-12" id="banner">
+                <!-- <div class="row">
+                    <img src="images/logo-pams-desain-2.jpg">
+                </div> -->
+            </div> 
+        </div>
+        <!-- end div header -->
+
+        <!-- div menu -->
+        <div id="menu"></div>
+        <!-- end div menu -->
+
+        <!--  div download -->
+        <div class="row margin-top-main-content">
+            <div class="col-xs-12">
+                <img src="images/download-desain-3.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div>
+            </div>
+            <div class="col-md-5 margin-top-main-content">
+	        	<table id="table_regulasi" class="table table-bordered table-striped" style="background-color:white;">
+	              	<thead>
+		                <tr style="background-color:#3A539B">
+		                     <th class="custom-header-table"></th>
+		                     <th class="custom-header-table">Regulasi Pengembangan Air Minum Dan Sanitasi</th>
+		                    <th style="width:70px;" class="custom-header-table">Action</th>
+		                </tr>
+	              	</thead>
+	              	<tbody>
+		               
+
+	                   
+	              	</tbody>
+	            </table>
+			</div>
+            
+            <div class="col-xs-2"></div>
+            
+            <div class="col-md-5 margin-top-main-content">
+	        	<table id="table_data" class="table table-bordered table-striped" style="background-color:white;">
+	              	<thead>
+		                <tr style="background-color:#F9BF3B">
+		                    <th class="custom-header-table" style="color:black"></th>
+		                    <th class="custom-header-table" style="color:black">Data Pengembangan Air Minum Dan Sanitasi</th>
+		                    <th style="width:70px;color:black" class="custom-header-table" >Action</th>
+		                </tr>
+	              	</thead>
+	              	<tbody>
+		               
+	              	</tbody>
+	            </table>
+			</div>
+			
+		
+        </div>
+        <!-- end div download -->
+
+        <!-- div content dan menu footer -->
+        <div id="menu-footer"></div>
+        <!-- end div content dan menu footer -->
+    </div>
+    <!-- end div container -->
+    <script src="js/config.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- DATATABLES -->
+    <script src="datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <!-- END JS DATATABLES -->
+    <script type="text/javascript">
+        function get_icon(icon){
+            var gambar_icon=""
+             if(icon.slice(-3) == 'xls' || icon.slice(-3) =='xlsx'){
+            gambar_icon="icon-excel.png";
+            }else if(icon.slice(-3) == 'doc' || icon.slice(-3) =='docx'){
+            gambar_icon="icon-word.png";
+            }
+            else if(icon.slice(-3) == 'pdf' ){
+            gambar_icon="icon-pdf.png";
+            }
+            return gambar_icon;
+        }
+      $(document).ready(function(){
+
+        $('#table_regulasi').dataTable({
+          "bPaginate": true,
+          "bLengthChange": true,
+          "bFilter": true,
+          "bSort": true,
+          "bInfo": true,
+          "bAutoWidth": false,
+          "processing": true,
+          "ajax": root+'index.php/regulasi_pams/get_regulasi_pams',
+          "columns": [
+          { "data": "file",
+            "render" : function(data){         
+              return '<img src="images/'+get_icon(data)+'">'
+            }},
+            { "data": "nama",
+            "render" : function(data){
+             return ' <span class="font-download">'+data+'</span>'
+             }},
+            { "data": "file", 
+            "render" : function(data){
+              return '<center><a href="../backoffice_pams_jateng/upload/dokumen/'+data+'"><i class="fa fa-download fa-2x"></i></a></center>'
+            }}        
+          ]
+
+        });
+
+        $('#table_data').dataTable({
+         "bPaginate": true,
+          "bLengthChange": true,
+          "bFilter": true,
+          "bSort": true,
+          "bInfo": true,
+          "bAutoWidth": false,
+          "processing": true,
+          "ajax": root+'index.php/data_pams/get_pams_jateng',
+          "columns": [
+          { "data": "file",
+            "render" : function(data){
+               return '<img src="images/'+get_icon(data)+'">'
+           }},
+            { "data": "nama",
+            "render" : function(data){
+             return ' <span class="font-download">'+data+'</span>'
+             }},
+            { "data": "file", 
+            "render" : function(data){
+              return '<center><a href="../backoffice_pams_jateng/upload/dokumen/'+data+'"><i class="fa fa-download fa-2x"></i></a></center>'
+            }}        
+          ]
+        });
+
+        // $('#table_lainnya').dataTable({
+        //   "bPaginate": true,
+        //   "bLengthChange": true,
+        //   "bFilter": true,
+        //   "bSort": true,
+        //   "bInfo": true,
+        //   "bAutoWidth": false,
+        //   "processing": true,
+        //   "ajax": root+'index.php/data_pams/data_lainnya',
+        //   "columns": [
+        //   { "data": "file",
+        //     "render" : function(data){
+        //         return '<img src="images/'+get_icon(data)+'">'
+        //   }},
+        //     { "data": "nama",
+        //     "render" : function(data){
+        //       return ' <span class="font-download">'+data+'</span>'
+        //     }},
+        //     { "data": "file", 
+        //     "render" : function(data){
+        //       return '<center><a href="../backoffice-pams-jateng/upload/dokumen/'+data+'"><i class="fa fa-download fa-2x"></i></a></center>'
+        //     }}        
+        //   ]
+
+        // });
+      });
+
+        //banner
+            $.ajax({
+            url     : root+'index.php/banner/get_banner',
+            type    : 'GET',
+         
+            async   : false,
+            cache   : false,
+            processData : false,
+            contentType : false,
+            success:function (data){
+                //console.log(data);
+                $("#banner").empty();
+                $("#banner").html('<div class="row"><img src="'+root+'upload/foto/'+data[0].banner+'.JPG"></div>');
+             
+              
+            }
+            })
+        //banner
+        $("#menu").load("menu.html");
+        $("#menu-footer").load("menu-footer.html");
+    </script>
+  <!-- END DATATABLES -->
+</body>
+
+</html>

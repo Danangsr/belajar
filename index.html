@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/icon-logo-jawa-tengah.png">
+
+    <title>Satuan Kerja Pengembangan Air Minum Dan Sanitasi Jawa Tengah</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" type="text/css" href="css/disable-responsive.css">
+    <link rel="stylesheet" type="text/css" href="bxslider/jquery.bxslider.asli.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-menu-utama.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-tab.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-multiple-menu.css">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css-calendar/fullcalendar.css">
+    <link rel='stylesheet' id='camera-css'  href='css-slider/camera.css' type='text/css' media='all'>
+
+    <!-- <link rel="stylesheet" href="css_date/style.css"> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    p{
+        font-family:Raleway-Medium; 
+    }
+    table {
+    border-spacing: 0;
+    width: 100%;
+    }
+
+    .calendar-container {
+        /*height: 538px;*/
+        /*left: 50%;*/
+        /*margin: -255px 0 0 -245px;*/
+        position: absolute;
+        /*top: 45%;*/
+        /*width: 510px;*/
+        margin-top: 5px;
+    }
+
+    .calendar {
+        text-align: center;
+    }
+
+    .calendar header {
+        position: relative;
+    }
+
+    .calendar h4 {
+        text-transform: uppercase;
+    }
+
+    .calendar thead {
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .calendar tbody {
+        color: #7c8a95;
+    }
+
+    .calendar tbody td:hover {
+        border: 2px solid #c0392b;
+        border-radius: 50%;
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        padding:0px 0px 30px 0px;
+        text-align: center;
+    }
+
+    .calendar tbody td.active {
+        border: 2px solid #c0392b;
+    }
+
+    .calendar td {
+        border: 2px solid transparent;
+        border-radius: 50%;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        width: 35px;
+        padding: 2px;
+    }
+
+    .current-day {
+        background: #c0392b;
+        color: #f9f9f9;
+    }
+
+    .event {
+        cursor: pointer;
+        position: relative;
+    }
+
+    .event:after {
+        background: #c0392b;
+        border-radius: 50%;
+        bottom: 8px;
+        display: block;
+        content: '';
+        height: 8px;
+        left: 50%;
+        margin: -4px 0 0 -4px;
+        position: absolute;
+        width: 8px;
+    }
+
+    .event.current-day:after {
+        background: #f9f9f9;
+    }
+
+    .btn-prev,
+    .btn-next {
+        border: 2px solid #cbd1d2;
+        border-radius: 50%;
+        color: #cbd1d2;
+        height: 32px;
+        font-size: 22px;
+        line-height: 28px;
+        margin: -16px;
+        position: absolute;
+        top: 50%;
+        width: 32px;
+    }
+
+    .btn-prev:hover,
+    .btn-next:hover {
+        background: #cbd1d2;
+        color: #f9f9f9;
+    }
+
+    .btn-prev {
+        left: 30px;
+    }
+
+    .btn-next {
+        right: 35px;
+    }
+
+    .list {
+        margin-top: 20px;
+    }
+
+    .close {
+        color: #A4AAAB;
+        margin-top: -15px;
+        margin-right: 10px;
+        float: right;
+    }
+    </style>
+</head>
+
+<body style="background-color:#EEEEEE;">
+    <!-- div container -->
+    <div class="container">
+        <!-- div header -->
+        <div class="row">
+            <!-- content banner -->
+            <div class="col-xs-12" id="banner"></div> 
+            <!-- end content banner -->
+        </div>
+        <!-- end div header -->
+
+        <!-- div menu -->
+        <div id="menu"></div>
+        <!-- end div menu -->
+
+        <!-- div running text -->
+        <div class="row margin-top-main-content">
+            <div class="col-xs-2 content-hot-news font-hot-news">
+                 <div class="row"><img src="images/hot-news.jpg"></div> 
+            </div>
+            <div class="col-xs-10 content-running-text">
+                <marquee onmouseover="this.stop()" onmouseout="this.start()">
+                   
+                        <!-- content runnig text -->
+                        <p class="font-running-text"></p>
+                        <!-- content running text -->
+                    
+                </marquee>
+            </div>
+            <!-- <div class="col-xs-3 content-search-engine">
+                 <form action="#" method="">
+                    <div class="input-group margin-div-search-engine">
+                        <input class="form-control font-search-engine" id="" name="" placeholder="Search for">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-default">
+                            <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form> 
+            </div> -->
+        </div>
+        <!-- end dib running text -->
+
+        <!-- div tab slider -->
+        <div class="row margin-top-main-content">
+           <div class="col-xs-3 bhoechie-tab-menu">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active text-center" style="padding:0px;">
+                       <img src="images/bidang-air-minum-desain-4.png">
+                    </a>
+                    <a href="#" class="list-group-item text-center" style="padding:0px;">
+                       <img src="images/bidang-sanitasi-desain-4.png">
+                    </a>
+                    <a href="#" class="list-group-item text-center" style="padding:0px;">
+                       <img src="images/kampanye-edukasi-desain-4.png">
+                    </a>
+                </div>             
+            </div>
+            
+           <div class="col-xs-9 bhoechie-tab">
+                <!-- slider bidang pengembangan air minum -->
+                <div class="bhoechie-tab-content active">
+                    <!-- content slideshow air minum -->
+                    <div class="camera_wrap" id="camera_wrap_1" style="width:850px;height:460px;"></div>
+                    <!-- end content slideshow air minum -->
+                </div>
+                <!-- end slider bidang pengembangan air minum -->
+
+                <!-- slider bidang sanitasi -->
+                <div class="bhoechie-tab-content" style="background-color:;">
+                    <!-- content slideshow sanitasi -->
+                    <div class="camera_wrap" id="camera_wrap_2" style="width:850px;height:460px;"></div>
+                    <!-- end content slideshow sanitasi -->
+                </div>
+                <!-- end slider bidang sanitasi -->
+
+                <!-- kampanye edukasi -->
+                <div class="bhoechie-tab-content">
+                    <!-- <iframe width="100%" height="460" src="https://www.youtube.com/embed/SziC5E4ZkoA" frameborder="0" allowfullscreen></iframe> -->
+                    <div class="camera_wrap" id="camera_wrap_3" style="width:850px;height:460px;"></div>
+                </div>
+                <!-- end kampanye edukasi  -->
+            </div>
+        </div>
+        <!-- end div tab slider -->
+
+        <!-- div pengumuman -->
+        <div class="row margin-top-main-content">
+            <div class="col-xs-12 content-shape-pengumuman">
+                <img src="images/pengumuman-desain-3.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div>
+            </div>
+            <!-- content pengumuman -->
+            <div class="col-xs-12 margin-content-pengumuman" id="pengumuman"></div>
+            <!-- end content pengumuman -->
+        </div>
+        <!-- end div pengumuman -->
+
+        <!--  div informasi terbaru dan informasi lama -->
+        <div class="row margin-top-main-content">
+            <div class="col-xs-8 content-shape-informasi">
+                <img src="images/informasi-terbaru-desain-3.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div>
+            </div>
+            <div class="col-xs-4 content-shape-informasi" style="height:;background-color:;">
+                <div style="margin-top:10px;">
+                <img src="images/informasi-lama-desain-3-kecil.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div></div>
+            </div>
+
+            <!-- div informasi terbaru -->
+            <div class="col-xs-8">
+                <!-- content informasi terbaru -->
+                <div class="slider_informasi_terbaru" id="informasi_terbaru" style="margin-top:10px;"></div>
+                <!-- end content informasi terbaru -->
+            </div>
+            <!-- end div informasi terbaru -->
+
+            <!-- div informasi lama -->
+            <div class="col-xs-4">
+                <!-- content informasi lama -->
+                <div id="informasi_lama"></div>
+                <!-- end content informasi kaa -->
+            </div>
+            <!-- end div informasi lama -->
+        </div>
+        <!-- end div informasi terbaru dan informasi lama -->
+
+        <!--  div kegiatan strategis dan agenda -->
+        <div class="row margin-top-main-content">
+            <div class="col-xs-6 content-shape-kegiatan-strategis-agenda">
+                <img src="images/kegiatan-strategis-desain-3.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div>
+            </div>
+            <div class="col-xs-6 content-shape-kegiatan-strategis-agenda">
+                <img src="images/agenda-desain-3.png">
+                <div class="col-xs-12" style="border-bottom:2px solid #3A539B;"></div>
+            </div>
+
+            <!-- div kegiatan strategis -->
+            <div class="col-xs-6">
+                <!-- content kegiatan strategis -->
+                <div class="slider-kegiatan" id="kegiatan"></div>
+                <!-- end content kegiatan strategis -->
+            </div>
+            <!-- end div kegiatan strategis -->
+
+            <!-- div agenda -->
+            <div class="col-xs-3">
+                <!-- content agenda -->
+                <div class="slider-agenda" id="agenda"></div>
+                <!-- end content agenda -->
+            </div>
+            <!-- end div agenda -->
+
+            <!-- div calender -->
+            <div class="col-xs-3">
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <header>
+                            <h4 class="month"></h4>
+                            <a class="btn-prev fontawesome-angle-left" ><i class="fa fa-angle-double-left"></i></a>
+                            <a class="btn-next fontawesome-angle-right"><i class="fa fa-angle-double-right"></i></a>
+                        </header>
+                        <table>
+                            <thead class="event-days">
+                                <tr></tr>
+                            </thead>
+                            <tbody class="event-calendar">
+                                <tr class="1"></tr>
+                                <tr class="2"></tr>
+                                <tr class="3"></tr>
+                                <tr class="4"></tr>
+                                <tr class="5"></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end div calender -->
+        </div>
+        <!-- end div kegiatan strategis dan agenda -->
+        <div class="row">
+            <div class="col-md-12">
+                
+            </div>
+        </div>
+        
+        <!-- div content dan menu footer -->
+        <div id="menu-footer"></div>
+        <!-- end div content dan menu footer -->
+    </div>
+    <!-- end div container -->
+   
+    <script src="js/jquery.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/rahasia.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js_date/simplecalendar.js" type="text/javascript"></script>
+    <script src="bxslider/jquery.bxslider.js"></script>
+    <script src='js-calendar/moment.min.js'></script>
+    <script src='js-calendar/fullcalendar.min.js'></script>
+    <script src="js-slider/jquery.min.js"></script>
+    <script src="js-slider/jquery.easing.1.3.js"></script>
+    <script src="js-slider/camera.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //Banner
+            $.ajax({
+                url     : root+'index.php/banner/get_banner',
+                type    : 'GET',
+             
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    //console.log(data);
+                    $("#banner").empty();
+                    $("#banner").html('<div class="row"><img src="'+root+'upload/foto/'+data[0].banner+'.JPG"></div>');
+                }
+            })
+            //End banner
+            //visit
+               $.ajax({
+                url     : root+'index.php/welcome/visit',
+                type    : 'GET',
+             
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                 }
+            })
+                        //pengumuman
+            $.ajax({
+                url     : root+'index.php/pengumuman/get_pengumuman',
+                type    : 'GET',
+         
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    //console.log(data.data[0]);
+                    $(".font-running-text").empty();
+                    $("#pengumuman").empty();
+                    $.each(data.data, function(i, item){
+                        // $(".font-running-text").append(item.judul_pengumuman+' &nbsp;<i class="fa fa-circle"></i>&nbsp; ');
+                        $(".font-running-text").append('<a href="detail-pengumuman.html?id_pengumuman='+item.id_pengumuman+'"><span style="color:white">'+item.judul_pengumuman+' &nbsp;<i class="fa fa-circle"></i>&nbsp; </span></a> ');
+                        $("#pengumuman").append(' <p class="font-pengumuman">'+item.judul_pengumuman+'.<a href="detail-pengumuman.html?id_pengumuman='+item.id_pengumuman+'"><u>Klik di sini</u></a></p>');
+                    })
+                }
+            })
+            //End pengumuman
+           
+            //Berita terbaru (informasi terbaru)
+            $.ajax({
+                url     : root+'index.php/berita/get_berita_jml/6',
+                type    : 'GET',
+             
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    $("#informasi_terbaru").empty();
+                    $.each(data.data, function(i, item){
+                        var berita = item.isi.substring(0, 500);
+                        if(i==0){
+                            $("#informasi_terbaru").html('<div style="padding:0px 0px 10px 0px;"><div class="col-xs-5 content-image-informasi"><div class="row"><img style="width:200px;height:;" src="'+root+'/upload/foto/'+item.gambar+'.JPG" class="img-rounded"></div></div><a href="detail-berita.html?id_berita='+item.id_berita+'"><p class="font-title-informasi-baru">'+item.nama+'</p></a><p class="font-date-informasi-baru">Ditulis Tanggal :'+item.tgl+'</p><p class="font-deskripsi-informasi-baru" >'+berita+'</p></div></div>');
+                        }else{
+                            $("#informasi_terbaru").append('<div style="padding:0px 0px 10px 0px;"><div class="col-xs-5 content-image-informasi"><div class="row"><img style="width:200px;height:;" src="'+root+'/upload/foto/'+item.gambar+'.JPG" class="img-rounded"></div></div><a href="detail-berita.html?id_berita='+item.id_berita+'"><p class="font-title-informasi-baru">'+item.nama+'</p></a><p class="font-date-informasi-baru">Ditulis Tanggal :'+item.tgl+'</p><p class="font-deskripsi-informasi-baru" >'+berita+'</p></div></div>');
+                        }
+                    i++;
+                    })
+                }
+            })
+            //End berita terbaru (informasi terbaru)
+
+            //Berita lama (informasi lama)
+            $.ajax({
+                url     : root+'index.php/berita/get_berita_jml/10',
+                type    : 'GET',
+         
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    //console.log(data.data[0]);
+                    $("informasi_lama").empty();
+                    $.each(data.data, function(i, item){
+                        if(i==0){
+                            $("#informasi_lama").html('<div style="" style="padding:0px 0px 10px 0px;"><div class="margin-content-slide-informasi-lama"><a href="detail-berita.html?id_berita='+item.id_berita+'"><p class="font-title-informasi-lama">'+item.nama+'</p></a><p class="font-date-informasi-lama">Ditulis Tanggal :'+item.tgl+'</p></div></div>');
+                        }else{
+                            $("#informasi_lama").append('<div style="style="padding:0px 0px 10px 0px;""><div class="margin-content-slide-informasi-lama"><a href="detail-berita.html?id_berita='+item.id_berita+'"><p class="font-title-informasi-lama">'+item.nama+'</p></a><p class="font-date-informasi-lama">Ditulis Tanggal :'+item.tgl+'</p></div></div>');
+                        }
+                    i++;
+                    })
+            
+                }
+            })
+            //End berita lama (informasi lama)
+
+            //Agenda
+            $.ajax({
+                url     : root+'index.php/agenda/get_agenda_jml',
+                type    : 'GET',
+             
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    //console.log(data.data[0]);
+                    $("#agenda").empty();
+                    $.each(data.data, function(i, item){
+                        if(i==0){
+                            $("#agenda").html('<div style="" style="padding:0px 0px 5px 0px;"><div class="margin-content-slide-agenda"><a href="detail-agenda.html?id_agenda='+item.id_agenda+'"><p class="font-title-agenda">'+item.nama+'</p></a><p class="font-date-agenda">Ditulis Tanggal :'+item.tgl+'</p></div><div class="font-place-agenda">Tempat : '+item.tempat+'</div></div>');
+                        }else{
+                            $("#agenda").append('<div style="" style="padding:0px 0px 5px 0px;"><div class="margin-content-slide-agenda"><a href="detail-agenda.html?id_agenda='+item.id_agenda+'"><p class="font-title-agenda">'+item.nama+'</p></a><p class="font-date-agenda">Ditulis Tanggal :'+item.tgl+'</p></div><div class="font-place-agenda">Tempat : '+item.tempat+'</div></div>');
+                        }
+                        i++;
+                    })
+                }
+            })
+            //End agenda
+
+            //Kegiatan strategis
+            $.ajax({
+                url     : root+'index.php/kegiatan_strategis/get_kegiatan_strategis',
+                type    : 'GET',
+         
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    //console.log(data.data[0]);
+                    $("#kegiatan").empty();
+                    $.each(data.data, function(i, item){
+                        if(i==0){
+                            $("#kegiatan").html('<div style="" style="padding:0px 0px 5px 0px;"><a href="detail-kegiatan-pdam.html"><div class="margin-content-slide-kegiatan"><img src="images/pdam-baru-2.png"></div></a></div><div style="" style="padding:0px 0px 5px 0px;"><a href="detail-kegiatan.html?id_kegiatan='+item.id_kegiatan+'"><div class="margin-content-slide-kegiatan"><img src="'+root+'/upload/foto/'+item.gambar+'.JPG"></div></a></div>');
+                        }else{
+                            $("#kegiatan").append('<div style="" style="padding:0px 0px 5px 0px;"><a href="detail-kegiatan.html?id_kegiatan='+item.id_kegiatan+'"><div class="margin-content-slide-kegiatan"><img src="'+root+'/upload/foto/'+item.gambar+'.JPG"></div></a></div>');
+                        }
+                        i++;   
+                    })
+                }
+            })
+            //End Kegiatan strategis
+
+            
+            //slideshow air minum
+            $.ajax({
+                url     : root+'index.php/slideshow_air_minum/get_slideshow_air_minum',
+                type    : 'GET',
+         
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    //console.log(data.data[0]);
+                    $("#camera_wrap_1").empty();
+                    $("#camera_wrap_1").html('<div data-thumb="'+root+'upload/foto/'+data.data[0].foto1+'.JPG"  data-src="'+root+'/upload/foto/'+data.data[0].foto1+'.JPG"> <div class="camera_caption fadeFromBottom"><p class="font-caption-slide">'+data.data[0].keterangan+'</p><a href="bidang-pengembangan-air-minum.html"><button class="btn btn-default btn-sm"><i class="fa fa-search-plus"></i>Read More</button></a></div></div>');
+                    $("#camera_wrap_1").append('<div data-thumb="'+root+'upload/foto/'+data.data[0].foto2+'.JPG"  data-src="'+root+'/upload/foto/'+data.data[0].foto2+'.JPG"> <div class="camera_caption fadeFromBottom"><p class="font-caption-slide">'+data.data[0].keterangan+'</p><a href="bidang-pengembangan-air-minum.html"><button class="btn btn-default btn-sm"><i class="fa fa-search-plus"></i>Read More</button></a></div></div>');
+                    $("#camera_wrap_1").append('<div data-thumb="'+root+'upload/foto/'+data.data[0].foto3+'.JPG"  data-src="'+root+'/upload/foto/'+data.data[0].foto3+'.JPG"> <div class="camera_caption fadeFromBottom"><p class="font-caption-slide">'+data.data[0].keterangan+'</p><a href="bidang-pengembangan-air-minum.html"><button class="btn btn-default btn-sm"><i class="fa fa-search-plus"></i>Read More</button></a></div></div>');
+                }
+            })
+            //end slideshow air minum
+
+            //slideshow sanitasi
+            $.ajax({
+                url     : root+'index.php/slideshow_sanitasi/get_slideshow_sanitasi',
+                type    : 'GET',
+         
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    //console.log(data.data[0]);
+                    $("#camera_wrap_2").empty();
+                    $("#camera_wrap_2").html('<div data-thumb="'+root+'upload/foto/'+data.data[0].foto1+'.JPG"  data-src="'+root+'/upload/foto/'+data.data[0].foto1+'.JPG"> <div class="camera_caption fadeFromBottom"><p class="font-caption-slide">'+data.data[0].keterangan+'</p><a href="bidang-sanitasi.html"><button class="btn btn-default btn-sm"><i class="fa fa-search-plus"></i>Read More</button></a></div></div>');
+                    $("#camera_wrap_2").append('<div data-thumb="'+root+'upload/foto/'+data.data[0].foto2+'.JPG"  data-src="'+root+'/upload/foto/'+data.data[0].foto2+'.JPG"> <div class="camera_caption fadeFromBottom"><p class="font-caption-slide">'+data.data[0].keterangan+'</p><a href="bidang-sanitasi.html"><button class="btn btn-default btn-sm"><i class="fa fa-search-plus"></i>Read More</button></a></div></div>');
+                    $("#camera_wrap_2").append('<div data-thumb="'+root+'upload/foto/'+data.data[0].foto3+'.JPG"  data-src="'+root+'/upload/foto/'+data.data[0].foto3+'.JPG"> <div class="camera_caption fadeFromBottom"><p class="font-caption-slide">'+data.data[0].keterangan+'</p><a href="bidang-sanitasi.html"><button class="btn btn-default btn-sm"><i class="fa fa-search-plus"></i>Read More</button></a></div></div>');
+                }
+            })
+            //end slide show sanitasi
+
+            //slideshow kampanye edukasi
+            $.ajax({
+                url     : root+'index.php/slideshow_kampanye/get_slideshow_kampanye',
+                type    : 'GET',
+         
+                async   : false,
+                cache   : false,
+                processData : false,
+                contentType : false,
+                success:function (data){
+                    //console.log(data.data[0]);
+                    $("#camera_wrap_3").empty();
+                    $.each(data.data, function(i, item){
+                    var address="";
+                    if(item.address!=""){
+                        address = '<a href="'+item.address+'" target="_blank"><button class="btn btn-default btn-sm"><i class="fa fa-search-plus"></i>Read More</button></a>';
+                    }
+                        if(i==0){
+                            $("#camera_wrap_3").html('<div data-thumb="'+root+'upload/foto/'+item.foto1+'.JPG"  data-src="'+root+'/upload/foto/'+item.foto1+'.JPG"> <div class="camera_caption fadeFromBottom"><p class="font-caption-slide">'+item.keterangan+'</p>'+address+'</div></div>');
+                        }else{
+                            $("#camera_wrap_3").append('<div data-thumb="'+root+'upload/foto/'+item.foto1+'.JPG"  data-src="'+root+'/upload/foto/'+item.foto1+'.JPG"> <div class="camera_caption fadeFromBottom"><p class="font-caption-slide">'+item.keterangan+'</p>'+address+'</div></div>');
+                        }
+                        i++;   
+                    })
+                }
+            })
+            //end slide show kampanye edukasi
+
+                         //End agenda
+
+            // js tabs    
+            $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+                e.preventDefault();
+                $(this).siblings('a.active').removeClass("active");
+                $(this).addClass("active");
+                var index = $(this).index();
+                $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+                $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+            });
+            // end js tabs
+
+            // js slider informasi terbaru
+            $('.slider_informasi_terbaru').bxSlider({
+                mode: 'vertical',
+                auto: true,
+                minSlides: 4,
+                maxSlides: 4,
+                // slideWidth: 360,
+                slideMargin: 2,
+                moveSlides: 3,
+                responsive: true,
+                pager : false,
+                pause: 10000,
+                speed: 2500,
+                controls : false
+            });
+            // end js slider informasi terbaru
+
+            // js slider informasi lama
+            $('.informasi_lama').bxSlider({
+                // minSlides: 10,
+                // maxSlides: 10,
+                // slideMargin: 2,
+                // responsive: true,
+                // pager : false,
+                // controls : false
+            });
+            // end js slider informasi lama
+
+            // js slider agenda
+            $('.slider-agenda').bxSlider({
+                mode: 'vertical',
+                auto: true,
+                minSlides: 3,
+                maxSlides: 3,
+                // slideWidth: 360,
+                // slideMargin: ,
+                moveSlides: 3,
+                responsive: true,
+                pager : false,
+                pause: 12000,
+                speed: 2500,
+                controls : false
+            });
+            // end js slider agenda
+
+            // js slider kegiatan strategis
+            $('.slider-kegiatan').bxSlider({
+                mode: 'vertical',
+                auto: true,
+                minSlides: 3,
+                maxSlides: 3,
+                // slideWidth: 360,
+                // slideMargin: ,
+                moveSlides: 3,
+                responsive: true,
+                pager : false,
+                pause: 14000,
+                speed: 2500,
+                controls : false
+            });
+            // end js slider kegiatan strategis
+
+            // js calendar
+            // documentation : http://fullcalendar.io/
+            $('#calendar').fullCalendar({
+                defaultDate: '2015-06-01',
+                editable: true,
+                eventLimit: true, 
+                height: 410,
+                eventColor: '#3A539B',
+                events: [
+                            {
+                                title: 'Event',
+                                url: 'http://google.com/',
+                                start: '2015-06-04'
+                            }
+                ]
+            });
+            // end js calendar
+
+            // js slideshow bidang air minum dan sanitasi
+            // documentation : http://www.pixedelic.com/plugins/camera/
+            // slideshow bidang air minum
+            jQuery('#camera_wrap_1').camera({
+                thumbnails: false,
+                pieDiameter: 14,
+                piePosition: 'rightBottom',
+                navigation: false,
+                playPause: false,
+                height: '460px',
+                pagination: false
+            });
+            // end slideshow bidang air minum
+
+            // slideshow bidang sanitasi
+            jQuery('#camera_wrap_2').camera({
+                thumbnails: false,
+                pieDiameter: 14,
+                piePosition: 'rightBottom',
+                navigation: false,
+                playPause: false,
+                height: '460px',
+                pagination: false
+            });
+            // end slideshow bidang sanitasi
+
+            // slideshow bidang kampanye edukasi
+            jQuery('#camera_wrap_3').camera({
+                thumbnails: false,
+                pieDiameter: 14,
+                piePosition: 'rightBottom',
+                navigation: false,
+                playPause: false,
+                height: '460px',
+                pagination: false
+            });
+            // end slideshow bidang kampanye edukasi
+            // end js slideshow bidang air minum dan sanitasi
+        });
+
+        $("#menu").load("menu.html");
+        $("#menu-footer").load("menu-footer.html"); 
+    </script>
+
+</body>
+
+</html>

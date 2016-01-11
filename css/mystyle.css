@@ -1,0 +1,775 @@
+/*********************** other css ***********************/
+	.margin-top-main-content{
+	    margin-top: 20px;
+	}
+
+	.margin-top-content{
+	    margin-top: 10px;
+	}
+
+	.imageHolder { 
+		position: relative;
+		width: ;
+		height: ; 
+	}
+		
+	.imageHolder .caption { 
+		position: absolute;
+		width: ;
+		height: ;
+		bottom: 0px;
+		left: 0px;
+		color: #ffffff;
+		padding: 10px;
+		background: none repeat scroll 0% 0% rgba(80, 80, 80, 0.75);
+		background-color: rgba(80, 80, 80, 0.75);
+		text-align:justify;
+	}
+/*********************** end other css ***********************/
+
+
+/*********************** css font ***********************/
+	@font-face{
+	  font-family:'Helvetica-Light';
+	  src: url('../fonts/Helvetica-Light.otf');
+	}
+
+	#Helvetica-Light{
+	  font-family:Helvetica-Light;  
+	}
+
+	@font-face{
+	  font-family:'Helvetica-Bold';
+	  src: url('../fonts/Helvetica-Bold.otf');
+	}
+
+	#Helvetica-Bold{
+	  font-family:Helvetica-Bold; 
+	}
+
+	@font-face{
+	  font-family:'Raleway-Bold';
+	  src: url('../fonts/Raleway-Bold.ttf');
+	}
+
+	#Raleway-Bold{
+	  font-family:Raleway-Bold; 
+	}
+
+	@font-face{
+	  font-family:'Raleway-Medium';
+	  src: url('../fonts/Raleway-Medium.ttf');
+	}
+
+	#Raleway-Medium{
+	  font-family:Raleway-Medium; 
+	}
+/*********************** end css font ***********************/
+
+/***********************  css menu ***********************/
+	.font-menu{
+		font-family:'Raleway-Medium';
+		font-size: 14px;
+	}
+
+	.font-dropdown-menu{
+		font-family:'Raleway-Medium';
+		font-size: 14px;
+	}
+/********************* end css menu *********************/
+
+/***********************  css div running text ***********************/
+	.content-hot-news{
+		height:50px;
+		background-color: #F9BF3B;
+	}
+
+	.content-running-text{
+		height:50px;
+		background-color: #3A539B;
+	}
+
+	.content-search-engine{
+		height:50px;
+		background-color: #3A539B;
+	}
+
+	.margin-div-search-engine{
+		margin-top:7px;
+	}
+
+	.font-hot-news{
+		font-family:'Raleway-Bold';
+		font-size:16px;
+		color:black;
+	}
+
+	.font-running-text{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		color:white;
+		margin-top:15px;
+	}
+
+	.font-running-text:hover{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color:#F9BF3B;
+	}
+
+	.font-search-engine{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+	}
+/********************* end css div running text *********************/
+
+/***********************  css tab slider ***********************/
+	.font-menu-tab{
+		font-family:'Raleway-Bold';
+		font-size:16px;
+		margin-top: 20px;
+	}
+
+	.content-slide{
+		width:850px;
+		height:460px;
+	}
+
+	.font-caption-slide{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+	}
+/********************* end css tab slider *********************/
+
+/***********************  css div pengumuman ***********************/
+	.content-shape-pengumuman{
+		height: 50px;
+	}
+
+	.margin-content-pengumuman{
+		padding-top: 10px;
+	}
+
+	.font-pengumuman{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		color:black;
+	}
+/********************* end css div pengumuman *********************/
+
+/***********************  css div informasi terbaru dan div informasi lama ***********************/
+	.content-shape-informasi{
+		height: 50px;
+	}
+
+	.margin-content-slide-informasi{
+		padding-top:10px;
+		height:250px;
+		background-color: ;
+	}
+
+	.margin-content-slide-informasi-lama{
+		padding-top:10px;
+		
+	}
+
+	.content-image-informasi{
+		width:200px;
+		height: ;
+		margin-right:10px;
+		margin-bottom:0px;
+		background-color: ;
+	}
+
+	.font-title-informasi-baru{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color: black;
+	}
+
+	.font-title-informasi-baru:hover{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color: #3A539B;
+	}
+
+	.font-date-informasi-baru{
+		font-family:'Raleway-Medium';
+		font-size:12px;
+		line-height: 1px;
+		color:black;
+	}
+
+	.font-deskripsi-informasi-baru{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		margin-top: 25px;
+		color:black;
+		text-align: justify;
+	}
+
+	.font-title-informasi-lama{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		/*color: #5c5c5c;*/
+		color:black;
+	}
+
+	.font-title-informasi-lama:hover{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		color:black;
+	}
+
+	.font-date-informasi-lama{
+		font-family:'Raleway-Medium';
+		font-size:12px;
+		line-height: 1px;
+		color:black;
+	}
+/********************* end css informasi terbaru dan informasi lama *********************/
+
+/***********************  css div kegiatan strategis dan div agenda ***********************/
+	.content-shape-kegiatan-strategis-agenda{
+		height: 50px;
+	}
+
+	.margin-content-slide-kegiatan{
+		padding-top:10px;
+	}
+
+	.margin-content-slide-agenda{
+		padding-top:10px;
+		padding-bottom: 5px;
+	}
+
+	.font-title-agenda{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color: black;
+		margin: 0px;
+	}
+
+	.font-date-agenda{
+		font-family:'Raleway-Medium';
+		font-size:12px;
+		color:black;
+		margin: 0px;
+	}
+
+	.font-place-agenda{
+		font-family:'Raleway-Medium';
+		font-size:12px;
+		color:black;
+		margin: 0px;
+	}
+/********************* end css div kegiatan strategis dan div agenda *********************/
+
+/***********************  css page prakata ***********************/
+	.content-shape-prakata{
+		height: 50px;
+	}
+
+	.font-nama-kepala-satker{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color: black;
+	}
+
+	.font-jabatan-kepala-satker{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color: black;
+	}
+
+	.font-prakata{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		text-align: justify;
+		color:black;
+	}
+/********************* end css page prataka *********************/
+
+/*********************** css page visi misi ***********************/
+	.font-title-visi-misi{
+		font-family:'Raleway-Bold';
+		font-size:20px;
+		color: black;
+		text-align: center;
+	}
+
+	.font-visi-misi{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		text-align: center;
+		color:black;
+	}
+/********************* end css page visi misi *********************/
+
+/*********************** css page struktur organisasi ***********************/
+	.font-nama-struktur-organisasi{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color: black;
+		text-align: center;
+	}
+
+	.font-jabatan-struktur-organisasi{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color: black;
+		text-align: center;
+	}
+/********************* end css page struktur organisasi *********************/
+
+/*********************** css page tupoksi ***********************/
+	.font-title-tupoksi{
+		font-family:'Raleway-Bold';
+		font-size:20px;
+		color: black;
+		text-align: center;
+	}
+
+	.sub-title-tupoksi{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color: black;
+		text-align: justify;
+		
+	}
+
+	.font-tupoksi{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		text-align: justify;
+		color:black;
+	}
+/********************* end css page tupoksi *********************/
+
+/*********************** css page arah kebijakan ***********************/
+	.font-title-arah-kebijakan{
+		font-family:'Raleway-Bold';
+		font-size:20px;
+		color: black;
+		text-align: center;
+	}
+
+	.font-arah-kebijakan{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		text-align: justify;
+		color:black;
+	}
+/********************* end css page arah kebijakan *********************/
+	.font-strategi-pendekatan{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		text-align: justify;
+		color:black;
+	}
+/********************* end css page strategi pendekatan *********************/
+
+/*********************** css page kantor ***********************/
+.font-title-kantor{
+	font-family:'Raleway-Bold';
+	font-size:20px;
+	color: black;
+	text-align: center;
+}
+
+.content-identitas-kantor{
+	background-color:;
+	height:120px;
+/*	border: 1px solid #ddd;
+    border: 1px solid rgba(86,61,124,.2);*/
+    padding:10px 10px 10px 10px;
+}
+
+.font-identitas-kantor{
+	font-family:'Raleway-Bold';
+	font-size:13px;
+	text-align: center;
+}
+/********************* end css page kantor *********************/
+
+/*********************** css page bidang air minum dan bidang sanitasi ***********************/
+	.font-bidang-air-minum{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		text-align: center;
+		color:black;
+	}
+
+	.font-bidang-sanitasi{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		text-align: center;
+		color:black;
+	}
+
+	.content-sub-menu-bidang-air-minum{
+		width: 150px;
+		height:150px;
+		background-color:#3A539B;
+	}
+
+	.font-sub-menu-bidang-air-minum{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		text-align: center;
+		color:white;
+		padding-top: 50px;
+	}
+
+	.font-sub-menu-bidang-air-minum-tipe-1{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		text-align: center;
+		color:white;
+		padding-top: 30px;
+	}
+
+
+	.font-sub-menu-bidang-air-minum-tipe-2{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		text-align: center;
+		color:white;
+		padding-top: 50px;
+	}
+
+	.font-sub-menu-bidang-air-minum-tipe-3{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		text-align: center;
+		color:white;
+		padding-top: 40px;
+	}
+
+	.font-sub-menu-bidang-sanitasi-tipe-1{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		text-align: center;
+		color:white;
+		padding-top: 60px;
+	}
+/********************* end css page bidang air minum dan bidang sanitasi *********************/
+
+/***********************  css page hasil kegiatan bidang air minum dan sanitasi ***********************/
+	.font-title-hasil-kegiatan{
+		font-family:'Raleway-Bold';
+		font-size:20px;
+		color: black;
+		text-align: center;
+	}
+	.font-search-engine-hasil-kegiatan{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		color: ;
+	}
+
+	.font-tabel-hasil-kegiatan{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		color: ;
+	}
+
+	.font-title-hasil-kegiatan-pertahun{
+		font-family:'Raleway-Bold';
+		font-size:16px;
+		color: black;
+	}
+
+	.font-title-detail-kegiatan-pertahun{
+		font-family:'Raleway-Bold';
+		font-size:16px;
+		color: black;
+	}
+
+	.custom-header-table{
+		font-family:'Raleway-Bold';
+		font-size:14px;
+		color:white;
+	}
+/********************* end css page hasil kegiatan bidang air minum dan sanitasi *********************/
+
+/*********************** css page download ***********************/
+	.font-download{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		color: ;
+	}
+/********************* end css page download *********************/
+
+/*********************** css page galeri ***********************/
+	.border-picture{
+		-webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+		box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+		margin-bottom:5px;
+	}
+
+	.font-title-picture{
+		font-family:'Raleway-Medium';
+		font-size:12px;
+		text-align:center
+	}
+
+	.font-jumlah-picture{
+		font-family:'Raleway-Medium';
+		font-size:12px;
+		text-align:center;
+		line-height:1px;
+	}
+/********************* end css page galeri *********************/
+
+/*********************** css page buku tamu ***********************/
+	.font-title-buku-tamu{
+		font-family:'Raleway-Bold';
+		font-size:20px;
+		color: ;
+	}
+
+	.font-date-buku-tamu{
+		font-family:'Raleway-Medium';
+		font-size:12px;
+		line-height: 1px;
+	}
+
+	.font-deskripsi-buku-tamu{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+	}
+
+	.font-post-buku-tamu{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+	}
+
+	/*Comment List styles*/
+	.comment-list .row {
+	  margin-bottom: 0px;
+	}
+	.comment-list .panel .panel-heading {
+	  padding: 4px 15px;
+	  position: absolute;
+	  border:none;
+	  /*Panel-heading border radius*/
+	  border-top-right-radius:0px;
+	  top: 1px;
+	}
+	.comment-list .panel .panel-heading.right {
+	  border-right-width: 0px;
+	  /*Panel-heading border radius*/
+	  border-top-left-radius:0px;
+	  right: 16px;
+	}
+	.comment-list .panel .panel-heading .panel-body {
+	  padding-top: 6px;
+	}
+	.comment-list figcaption {
+	  /*For wrapping text in thumbnail*/
+	  word-wrap: break-word;
+	}
+	/* Portrait tablets and medium desktops */
+	@media (min-width: 768px) {
+	  .comment-list .arrow:after, .comment-list .arrow:before {
+	    content: "";
+	    position: absolute;
+	    width: 0;
+	    height: 0;
+	    border-style: solid;
+	    border-color: transparent;
+	  }
+	  .comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
+	    border-left: 0;
+	  }
+	  /*****Left Arrow*****/
+	  /*Outline effect style*/
+	  .comment-list .panel.arrow.left:before {
+	    left: 0px;
+	    top: 30px;
+	    /*Use boarder color of panel*/
+	    border-right-color: inherit;
+	    border-width: 16px;
+	  }
+	  /*Background color effect*/
+	  .comment-list .panel.arrow.left:after {
+	    left: 1px;
+	    top: 31px;
+	    /*Change for different outline color*/
+	    border-right-color: #FFFFFF;
+	    border-width: 15px;
+	  }
+	  /*****Right Arrow*****/
+	  /*Outline effect style*/
+	  .comment-list .panel.arrow.right:before {
+	    right: -16px;
+	    top: 30px;
+	    /*Use boarder color of panel*/
+	    border-left-color: inherit;
+	    border-width: 16px;
+	  }
+	  /*Background color effect*/
+	  .comment-list .panel.arrow.right:after {
+	    right: -14px;
+	    top: 31px;
+	    /*Change for different outline color*/
+	    border-left-color: #FFFFFF;
+	    border-width: 15px;
+	  }
+	}
+.comment-list .comment-post {
+  margin-top: 6px;
+}
+/********************* end css page buku tamu *********************/
+
+/*********************** css page berita ***********************/
+	.font-title-berita{
+		font-family:'Raleway-Bold';
+		font-size:16px;
+		color: black;
+	}
+
+	.font-date-berita{
+		font-family:'Raleway-Medium';
+		font-size:12px;
+		line-height: 1px;
+	}
+
+	.font-deskripsi-berita{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		text-align: justify;
+		margin-top: 20px;
+	}
+
+	.content-image-berita{
+		width:250px;
+		background-color:;
+	}
+/********************* end css page berita *********************/
+
+/*********************** css page detail berita ***********************/
+.font-title-detail-berita{
+	font-family:'Raleway-Bold';
+	font-size:16px;
+	text-align: center;
+}
+
+.font-date-detail-berita{
+	font-family:'Raleway-Medium';
+	font-size:12px;
+	text-align: right;
+}
+
+.font-deskripsi-berita{
+	font-family:'Raleway-Medium';
+	font-size:14px;
+	text-align: justify;
+}
+/********************* end css page detail berita *********************/
+
+/*********************** css page sitemap ***********************/
+	.font-sitemap{
+		font-family:'Raleway-Medium';
+		font-size:14px;
+		color:;
+		text-decoration: none;
+	}
+/********************* end css page sitemap *********************/
+
+/*********************** css div footer ***********************/
+.content-footer{
+	height:220px;
+	background-color:#F9BF3B;
+}
+
+.content-footer-left{
+	height:200px;
+	background-color:#F9BF3B;
+}
+
+.margin-content-footer-left{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.content-image-footer{
+	width:150px;
+	height:150px;
+	background-color:;
+	float:left;
+	margin-right:10px;
+}
+
+.content-identitas-instansi{
+	width:200px;
+	height:100px;
+	background-color:;
+	float:left;
+}
+
+.font-identitas-instansi-title{
+	font-family:'Raleway-Bold';
+	font-size:14px;
+	color: black;
+}
+
+.font-identitas-instansi{
+	font-family:'Raleway-Medium';
+	font-size:14px;
+	color: black;
+}
+
+.content-footer-right{
+	height:200px;
+	background-color:#F9BF3B;
+}
+
+.margin-content-footer-right{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.button-color{
+	background-color: #3A539B;
+	border:1px solid #3A539B;
+	font-family:'Raleway-Medium';
+	font-size:12px;
+	color: white
+}
+
+.font-button-footer{
+	font-family:'Raleway-Medium';
+	font-size:12px;
+	color: white;
+}
+
+.font-statistik-pengunjung{
+	font-family:'Raleway-Medium';
+	font-size:12px;
+	text-align: justify;
+	color: black;
+}
+
+.font-title-menu-footer{
+	font-size:12px;
+	color:black;
+	font-family:Raleway-Bold;
+}
+
+.font-submenu-footer{
+	font-size:12px;
+	color:black;
+	font-family:Raleway-Medium;
+}
+
+.font-submenu-footer:hover{
+	font-size:13px;
+	color:black;
+	font-family:Raleway-Medium;
+	text-decoration: none;
+}
+/********************* end css div footer ********************/
+
